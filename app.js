@@ -1,11 +1,13 @@
 let originalArr = [1,2,3,4,5,6,7,8,9];
 const colorElem = ['#6F98A8', '#2B8EAD', '#2F454E', '#2B8EAD', '#2F454E', '#BFBFBF', '#BFBFBF', '#6F98A8', '#2F454E'];
 
+//First time load function
 (function(data){
     console.log(data);
     init(data);
 })(originalArr);
 
+//Common grid creating functionality
 function init(data){
     const tileContainer = document.querySelector('.tile-container');
     tileContainer.innerHTML = '';
@@ -24,6 +26,7 @@ function init(data){
     }
 }
 
+//Shuffle functionality
 function shuffle(){
     const tileContainer = document.querySelector('.tile-container');
     tileContainer.innerHTML = '';
@@ -36,6 +39,7 @@ function shuffle(){
     init(originalArr);
 }
 
+//Sorting functionlaity
 function sortFun(){
     let sortArr = originalArr.sort();
     const tileContainer = document.querySelector('.tile-container');
@@ -43,6 +47,7 @@ function sortFun(){
     init(sortArr);
 }
 
+//Window resize event
 window.addEventListener('resize', reportWindowSize);
 
 function reportWindowSize(){
